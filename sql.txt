@@ -1,0 +1,3 @@
+CREATE TABLE users (username VARCHAR(255), password VARCHAR(255))
+CREATE TABLE todoApp (id VARCHAR(255), time VARCHAR(255), title VARCHAR(255), description VARCHAR(255))
+
