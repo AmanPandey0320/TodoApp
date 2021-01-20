@@ -1,7 +1,7 @@
 # TodoApp
 App link: http://13.58.200.33:3000/mytodoapp
 ## End-points
- 
+Base URL: http://13.58.200.33:3000/
 ### user/signup:
 It a post request and requires a body to be sent with type {"username":"someusername", "password":"yourpassword"}. This is used to signup the new user.
  
