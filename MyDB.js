@@ -5,6 +5,7 @@ module.exports = mysql.createConnection({
   user: "sql12388059",
   password: "ph4jaBuSS8",
   port:'3306',
-  database:'sql12388059'
+  database:'sql12388059',
+  stream:true,
 });
 

@@ -20,7 +20,10 @@ route.put('/add',(req,res)=>{
      var username = queryList.username;
      var sql = `SELECT * FROM todoApp WHERE id='${username}'`;
      db.query(sql,(err,result)=>{
-         if(err) throw err;
+         if(err){
+             console.log(err);
+             res.sendStatus(500);
+         }else
          res.json(result);
      });
  });

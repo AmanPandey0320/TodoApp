@@ -31,7 +31,7 @@ route.post('/signin',(req,res)=>{
         if(err) throw err;
         console.log(result);
         if(result.length == 0)
-        res.send('no such user exists')
+        res.sendStatus(404);
         else if(result[0].password == body.password)
         res.sendStatus(200);
         else res.sendStatus(401);
