@@ -1,4 +1,5 @@
 var user;
+var desc_u,title_u,time_u;
 class ListView extends React.Component{
     render(){
         return(
@@ -22,13 +23,18 @@ class ListView extends React.Component{
                         }
                         xhr.send(sender);
                     };
-                    function updateClickHandler(){alert(e.description)};
+                    function updateClickHandler(){
+                       desc_u=$('#description_u').val();
+                       title_u=$('#title_u').val();
+                       time_u = e.time;
+                    };
+                    
                     return(
                         <li>
                             <p>Title: {e.title}</p>
                             <p>Description: {e.description}</p>
                             <button onClick={deleteClickHandler} className="btn mr-1 btn-danger">Delete</button>
-                            <button onClick={updateClickHandler} className="btn ml-1 btn-primary">Update</button>
+                            <button onClick={updateClickHandler}data-toggle="modal" data-target="#modelId2" className="btn ml-1 btn-primary">Update</button>
                             <hr></hr>
                         </li>
                     );
@@ -145,4 +151,27 @@ $('#addBtn').on('click',()=>{
     }
 });
 
-//completed task
+$('#updateBtn').on('click',()=>{
+    var new_desc =  desc_u;
+    var new_title = title_u;
+    // console.log(new_title+new_desc+time_u);
+    var data ={
+        time:`${time_u}`,
+        id:user,
+        title:new_title,
+        description:new_desc,
+    };
+    var sender = JSON.stringify(data);
+    console.log(data);
+    var xhr = new XMLHttpRequest();
+    xhr.open('PUT','todo/update',true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            if(this.status == 200){
+                domSetter(user);
+            }
+        }
+    }
+    xhr.send(sender);
+});
