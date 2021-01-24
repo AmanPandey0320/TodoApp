@@ -1,7 +1,10 @@
+"use strict"
 const express = require('express');
 const route = express.Router();
 const db = require('../MyDB');
 const bodyParser = require('body-parser');
+const pool = require('../db_config');
+
 route.use(bodyParser.json());
 route.use(bodyParser.urlencoded({ extended:true}));
 
@@ -48,12 +51,16 @@ route.post('/delete',(req,res)=>{
     });
 });
 
-route.post('/alluser',(req,res)=>{
+route.post('/alluser',async (req,res)=>{
     var sql = 'SELECT * FROM users';
-    db.query(sql,(err,result)=>{
-        if(err) throw err;
+    try{
+        var result = await pool.query(sql);
         res.json(result);
-    })
-})
+    }catch(err){
+        console.log(err);
+        res.send(err);
+    }
+
+});
 
 module.exports = route;
