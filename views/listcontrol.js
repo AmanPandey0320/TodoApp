@@ -12,7 +12,7 @@ class ListView extends React.Component{
                         };
                         var sender = JSON.stringify(data);
                         var xhr = new XMLHttpRequest();
-                        xhr.open('DELETE','todo/delete',true);
+                        xhr.open('DELETE','https://guarded-ridge-68240.herokuapp.com/todo/delete',true);
                         xhr.setRequestHeader('Content-Type', 'application/json');
                         xhr.onreadystatechange = function(){
                             if(this.readyState == 4){
@@ -54,7 +54,7 @@ var setList = (data)=>{
 var domSetter =(userName)=>{
     console.log('domset');
     $.ajax({
-        url:`todo/tasks?username=${userName}`,
+        url:`https://guarded-ridge-68240.herokuapp.com/todo/tasks?username=${userName}`,
         type: 'GET',
         success: (responce)=>{
             setList(responce);
@@ -72,7 +72,7 @@ $('#getUser').on('click',()=>{
     };
     var sender = JSON.stringify(data);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST','user/signin',true);
+    xhr.open('POST','https://guarded-ridge-68240.herokuapp.com/user/signin',true);
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.onreadystatechange= function() {
         if(this.readyState == 4){
@@ -100,7 +100,7 @@ $('#newUser').on('click',()=>{
     };
     var sender = JSON.stringify(data);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST','user/signup',true);
+    xhr.open('POST','https://guarded-ridge-68240.herokuapp.com/user/signup',true);
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.onreadystatechange= function() {
         if(this.readyState == 4){
@@ -137,7 +137,7 @@ $('#addBtn').on('click',()=>{
         };
         var sender = JSON.stringify(data);
         var xhr = new XMLHttpRequest();
-        xhr.open('PUT','todo/add',true);
+        xhr.open('PUT','https://guarded-ridge-68240.herokuapp.com/todo/add',true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function(){
             if(this.readyState == 4){
@@ -164,7 +164,7 @@ $('#updateBtn').on('click',()=>{
     var sender = JSON.stringify(data);
     console.log(data);
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT','todo/update',true);
+    xhr.open('PUT','https://guarded-ridge-68240.herokuapp.com/todo/update',true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4){
