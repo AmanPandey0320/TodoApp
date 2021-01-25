@@ -1,5 +1,5 @@
 # TodoApp
-App link: https://guarded-ridge-68240.herokuapp.com
+App link: https://guarded-ridge-68240.herokuapp.com/mytodoapp
 ## End-points
 Base URL: https://guarded-ridge-68240.herokuapp.com/
 ### user/signup:
