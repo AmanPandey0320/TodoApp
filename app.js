@@ -8,6 +8,11 @@ const path =  require('path');
 
 app.use('/user',createUser);
 app.use('/todo',todo);
+app.use('/',express.static('views'));
+
+app.get('/mytodoapp',(req,res)=>{
+  res.sendFile(path.join(__dirname+'/views/index.html'));
+})
 
 app.listen(server_port, server_host, function() {
   console.log('Listening on port %d', server_port);
