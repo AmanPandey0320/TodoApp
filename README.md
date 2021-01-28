@@ -1,7 +1,7 @@
 # TodoApp
-App link: https://guarded-ridge-68240.herokuapp.com/mytodoapp
+App link: https://aman-todoapp.herokuapp.com/mytodoapp
 ## End-points
-Base URL: https://guarded-ridge-68240.herokuapp.com/
+Base URL: hhttps://aman-todoapp.herokuapp.com/
 ### user/signup:
 It a post request and requires a body to be sent with type {"username":"someusername", "password":"yourpassword"}. This is used to signup the new user.
  
