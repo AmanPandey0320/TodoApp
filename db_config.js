@@ -2,11 +2,11 @@ const util = require('util');
 const mysql = require('mysql');
 
 let pool = mysql.createPool({
-    host: "sql12.freesqldatabase.com",
-    user: "sql12388059",
-    password: "ph4jaBuSS8",
+    host: "localhost",
+    user: "root",
+    password: "Aman@123",
     port:'3306',
-    database:'sql12388059',
+    database:'todo',
 });
 
 pool.getConnection((err,con)=>{
